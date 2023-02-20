@@ -1,4 +1,3 @@
-const { Schema } = require('mongoose')
 const restful = require('node-restful')
 const mongoose = restful.mongoose
 
@@ -24,8 +23,8 @@ const debtSchema = new mongoose.Schema({
 
 const billingCycleSchema = new mongoose.Schema({
   name: { type: String, required: true },
-  month: { type: Number, min: 1, max: 12, require: true },
-  year: { type: Number, min: 1970, max: 2100, required: false },
+  month: { type: Number, min: 1, max: 12, required: true },
+  year: { type: Number, min: 1970, max: 2100, required: true },
   credits: [creditSchema],
   debts: [debtSchema]
 })
